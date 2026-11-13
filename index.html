@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoverForge Studio — Book Cover Design for Indie Authors (KDP)</title>
+<meta name="description" content="Professional book covers for independent authors: ebook + print-ready paperback with spine, back cover and promo pieces. From $149. Two concepts, revisions until you approve.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#173527; --forest2:#0f271c; --pine:#1e4634;
+  --amber:#e8b860; --amber2:#c98f2d; --brick:#b4492f; --brick2:#93381f;
+  --paper:#f7f1e1; --paper2:#efe5cd; --ink:#22301f; --cream:#fbf7ec;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',Arial,sans-serif;background:var(--forest2);color:var(--cream);line-height:1.55;font-size:18px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.12}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+a.btn{display:inline-block;background:var(--brick);color:#fff;font-weight:700;font-size:1.15rem;
+  padding:18px 34px;border-radius:10px;text-decoration:none;box-shadow:0 6px 0 var(--brick2);letter-spacing:.02em}
+a.btn:hover{background:#c5532f}
+a.btn.amber{background:var(--amber);color:#231a05;box-shadow:0 6px 0 var(--amber2)}
+.small{font-size:.92rem;opacity:.85}
+.center{text-align:center}
+
+/* header */
+header{background:var(--forest2);border-bottom:3px solid var(--amber);padding:16px 0;position:sticky;top:0;z-index:50}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.wordmark{font-family:'Playfair Display',serif;font-weight:900;font-size:1.55rem;letter-spacing:.04em;color:var(--cream);text-decoration:none}
+.wordmark span{color:var(--amber)}
+header nav a{color:var(--cream);text-decoration:none;font-weight:600;margin-left:20px;font-size:1rem}
+header nav a:hover{color:var(--amber)}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--forest) 0%,var(--forest2) 78%);padding:56px 0 64px}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
+.kicker{display:inline-block;background:var(--brick);color:#fff;font-weight:700;letter-spacing:.14em;
+  font-size:.8rem;padding:7px 14px;border-radius:999px;text-transform:uppercase}
+.hero h1{font-size:3rem;font-weight:900;margin:18px 0 14px}
+.hero h1 em{color:var(--amber);font-style:normal}
+.hero p.lede{font-size:1.22rem;max-width:34em}
+.hero .stat{margin:20px 0 26px;background:rgba(232,184,96,.12);border-left:5px solid var(--amber);padding:14px 18px;border-radius:0 10px 10px 0}
+.hero .stat b{color:var(--amber)}
+.hero figure{border:10px solid var(--paper);border-radius:6px;box-shadow:0 24px 50px rgba(0,0,0,.5);transform:rotate(1.2deg)}
+.hero figcaption{background:var(--paper);color:#5a4a28;font-size:.85rem;padding:8px 12px;text-align:center}
+
+/* shelf sections */
+.shelf{background:var(--paper);color:var(--ink);padding:60px 0 30px}
+.shelf h2{font-size:2.3rem;color:var(--forest);text-align:center}
+.shelf .sub{text-align:center;max-width:44em;margin:10px auto 8px;color:#4c5546}
+.aisle{margin:34px 0 8px}
+.aisle-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.aisle-head h3{font-size:1.5rem;color:var(--forest);white-space:nowrap}
+.aisle-head .line{flex:1;height:14px;border-radius:4px;background:
+  repeating-linear-gradient(90deg,var(--amber) 0 26px,var(--brick) 26px 32px,var(--pine) 32px 58px,var(--amber2) 58px 64px);opacity:.55}
+.shelf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:20px 18px 26px;
+  background:linear-gradient(180deg,var(--paper2),var(--paper));
+  border-bottom:16px solid #8a6a3b;border-radius:6px;box-shadow:inset 0 -8px 0 rgba(0,0,0,.08)}
+.book{position:relative}
+.book img{border-radius:3px 8px 8px 3px;box-shadow:6px 8px 18px rgba(30,30,10,.35);width:100%}
+.sample-badge{position:absolute;top:10px;right:-6px;background:var(--brick);color:#fff;font-weight:700;
+  font-size:.72rem;letter-spacing:.12em;padding:5px 10px;border-radius:3px;box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.book figcaption{margin-top:12px;text-align:center}
+.book figcaption b{font-family:'Playfair Display',serif;color:var(--forest)}
+.book figcaption span{display:block;font-size:.9rem;color:#5c6656}
+
+.spines{display:flex;gap:14px;align-items:stretch}
+.spine{flex:1;border-radius:4px 8px 8px 4px;box-shadow:4px 6px 14px rgba(30,30,10,.3);
+  writing-mode:vertical-rl;text-orientation:mixed;display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.14em;font-size:1rem;color:#f3ead2;
+  padding:18px 0;min-height:100%}
+.spine.s1{background:linear-gradient(180deg,#1e4634,#14291f)}
+.spine.s2{background:linear-gradient(180deg,#b4492f,#7e2f1a)}
+.spine.s3{background:linear-gradient(180deg,#c98f2d,#8a5f14)}
+.spine.s4{background:linear-gradient(180deg,#3c5a48,#22392c)}
+.shelf-one{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:stretch;
+  padding:22px 20px 28px;background:linear-gradient(180deg,var(--paper2),var(--paper));
+  border-bottom:16px solid #8a6a3b;border-radius:6px;box-shadow:inset 0 -8px 0 rgba(0,0,0,.08)}
+@media (max-width:640px){.shelf-one{grid-template-columns:1fr}.spines{min-height:180px}}
+
+/* thumbnail test */
+.thumbtest{background:var(--forest);padding:64px 0}
+.thumbtest h2{font-size:2.3rem;text-align:center}
+.thumbtest .sub{text-align:center;max-width:42em;margin:12px auto 30px}
+.thumb-arena{background:var(--cream);border-radius:14px;padding:34px 22px;color:var(--ink);
+  display:flex;justify-content:center;align-items:flex-end;gap:56px;flex-wrap:wrap}
+.thumb-item{text-align:center}
+.thumb-item img{margin:0 auto;border-radius:2px 5px 5px 2px;box-shadow:3px 4px 10px rgba(0,0,0,.3)}
+.thumb-item .tag{margin-top:14px;font-weight:700;font-size:.85rem;letter-spacing:.08em;padding:6px 12px;border-radius:999px;display:inline-block}
+.tag.pro{background:var(--pine);color:#fff}
+.tag.diy{background:#d8d2bd;color:#5c5540}
+.thumbtest .verdict{text-align:center;margin-top:26px;font-size:1.15rem}
+.thumbtest .verdict b{color:var(--amber)}
+
+/* how it works */
+.how{background:var(--paper);color:var(--ink);padding:64px 0}
+.how h2{font-size:2.3rem;color:var(--forest);text-align:center;margin-bottom:34px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{background:#fff;border:2px solid var(--paper2);border-top:8px solid var(--amber);border-radius:12px;padding:24px 20px}
+.step .n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--brick)}
+.step h3{font-size:1.2rem;color:var(--forest);margin:6px 0 8px}
+.step p{font-size:.98rem;color:#45503f}
+
+/* comparison */
+.compare{background:var(--forest2);padding:64px 0}
+.compare h2{font-size:2.3rem;text-align:center}
+.compare .sub{text-align:center;max-width:44em;margin:12px auto 34px}
+.chart{background:var(--forest);border:2px solid var(--pine);border-radius:14px;padding:28px 26px;margin-bottom:22px}
+.chart h3{font-family:'Source Sans 3',sans-serif;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
+.bar-row{margin-bottom:16px}
+.bar-row .lbl{display:flex;justify-content:space-between;font-weight:600;font-size:1rem;margin-bottom:6px;gap:10px;flex-wrap:wrap}
+.bar{height:30px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:6px}
+.bar .fill-rival{background:repeating-linear-gradient(45deg,#7d7466 0 14px,#6e6455 14px 28px)}
+.bar .fill-us{background:linear-gradient(90deg,var(--amber2),var(--amber))}
+.bar .fill-typ{background:repeating-linear-gradient(45deg,#7d7466 0 14px,#6e6455 14px 28px)}
+.note{font-size:.9rem;opacity:.8}
+
+/* pricing */
+.pricing{background:var(--paper);color:var(--ink);padding:64px 0}
+.pricing h2{font-size:2.3rem;color:var(--forest);text-align:center}
+.pricing .sub{text-align:center;max-width:42em;margin:10px auto 36px;color:#4c5546}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:#fff;border:2px solid var(--paper2);border-radius:16px;padding:30px 26px;display:flex;flex-direction:column}
+.plan.star{border:3px solid var(--amber);box-shadow:0 18px 40px rgba(120,90,20,.25);position:relative}
+.plan .flag{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--brick);color:#fff;
+  font-weight:700;letter-spacing:.1em;font-size:.78rem;padding:7px 16px;border-radius:999px;white-space:nowrap}
+.plan h3{font-size:1.35rem;color:var(--forest)}
+.plan .price{font-family:'Playfair Display',serif;font-size:2.9rem;font-weight:900;color:var(--brick);margin:8px 0 2px}
+.plan .per{font-size:.95rem;color:#6a7261;margin-bottom:16px}
+.plan ul{list-style:none;margin-bottom:24px}
+.plan li{padding:7px 0 7px 28px;position:relative;font-size:1rem;border-bottom:1px dashed #e4dcc4}
+.plan li::before{content:"✔";position:absolute;left:2px;color:var(--pine);font-weight:700}
+.plan a.btn{margin-top:auto;text-align:center;font-size:1.05rem;padding:15px 18px}
+
+/* transparency + faq */
+.transparency{background:var(--forest);padding:56px 0}
+.transparency .box{border:2px dashed var(--amber);border-radius:14px;padding:28px 30px;background:rgba(232,184,96,.07)}
+.transparency h2{font-size:1.8rem;color:var(--amber);margin-bottom:12px}
+.faq{background:var(--paper);color:var(--ink);padding:64px 0}
+.faq h2{font-size:2.3rem;color:var(--forest);text-align:center;margin-bottom:30px}
+.faq details{background:#fff;border:2px solid var(--paper2);border-radius:12px;padding:18px 22px;margin-bottom:12px}
+.faq summary{font-weight:700;font-size:1.08rem;color:var(--forest);cursor:pointer}
+.faq details p{margin-top:10px;color:#45503f}
+
+/* final cta + footer */
+.final{background:linear-gradient(160deg,var(--forest),var(--forest2));padding:64px 0;text-align:center}
+.final h2{font-size:2.4rem;margin-bottom:14px}
+.final p{max-width:40em;margin:0 auto 28px;font-size:1.15rem}
+footer{background:#0a1d14;padding:28px 0;font-size:.9rem;color:#b9c4ae}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{color:var(--amber)}
+
+@media (max-width:900px){
+  .hero .grid{grid-template-columns:1fr}
+  .shelf-row{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .plans{grid-template-columns:1fr}
+  .hero h1{font-size:2.3rem}
+}
+@media (max-width:480px){
+  body{font-size:17px}
+  .steps{grid-template-columns:1fr}
+  .thumb-arena{gap:30px}
+  header nav a{margin-left:12px}
+  a.btn{padding:16px 22px;font-size:1.05rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="#">COVER<span>FORGE</span> STUDIO</a>
+    <nav>
+      <a href="#samples">Samples</a><a href="#how">How It Works</a><a href="#prices">Prices</a><a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="kicker">Book cover design for indie authors</span>
+      <h1>On Amazon, your book gets <em>two seconds</em>. Make them count.</h1>
+      <p class="lede">Readers judge your book by a thumbnail the size of a postage stamp. CoverForge Studio designs genre-perfect covers that look like they came from a big publishing house — ebook, print-ready paperback, and promo pieces included.</p>
+      <div class="stat">
+        <b>3,529,980</b> self-published titles were registered in the U.S. in 2025 alone — up 38.7% in one year (Bowker, via Publishers Weekly, March 2026). Every single one needed a cover before it could sell. Indie authors now capture <b>51% of ebook units</b> — and the cover is the ad that wins the click.
+      </div>
+      <a class="btn" href="PAYHIP_CHECKOUT_URL">Get My Cover — From $149</a>
+      <p class="small" style="margin-top:12px">Two concepts included · Revision rounds until you approve the final cover*</p>
+    </div>
+    <figure>
+      <img src="assets/hero.jpg" alt="An independent author at her desk with a stack of her printed books" width="1100" height="733">
+      <figcaption>Your manuscript deserves to sit on a shelf like this. (Illustrative photo)</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- THUMBNAIL TEST -->
+<section class="thumbtest">
+  <div class="wrap">
+    <h2>The Thumbnail Test</h2>
+    <p class="sub">This is the exact size your cover appears in Amazon search results. Two seconds. Which book would you click?</p>
+    <div class="thumb-arena">
+      <div class="thumb-item">
+        <img src="assets/cover-thriller-web.jpg" alt="SAMPLE — CoverForge thriller cover at thumbnail size" width="118" height="177">
+        <span class="tag pro">SAMPLE — COVERFORGE DESIGN</span>
+      </div>
+      <div class="thumb-item">
+        <img src="assets/cover-homemade-web.jpg" alt="SAMPLE — typical homemade cover at thumbnail size" width="118" height="177">
+        <span class="tag diy">SAMPLE — TYPICAL DIY COVER</span>
+      </div>
+    </div>
+    <p class="verdict">One of these looks like a bestseller. The other looks like a homework assignment. <b>Your readers can tell the difference instantly — so can the algorithm.</b></p>
+    <p class="center" style="margin-top:22px"><a class="btn amber" href="PAYHIP_CHECKOUT_URL">Make Mine the Bestseller-Looking One</a></p>
+  </div>
+</section>
+
+<!-- SAMPLE SHELVES -->
+<section class="shelf" id="samples">
+  <div class="wrap">
+    <h2>Browse the Shelves</h2>
+    <p class="sub">Every genre has its own visual language — readers spot a wrong-genre cover in a heartbeat. These are <b>sample covers</b> with fictional titles and authors, designed to show the standard your book will get.</p>
+
+    <div class="aisle">
+      <div class="aisle-head"><h3>🕵️ Thriller &amp; Mystery Aisle</h3><div class="line"></div></div>
+      <div class="shelf-one">
+        <figure class="book">
+          <img src="assets/cover-thriller-web.jpg" alt="SAMPLE thriller cover: The Last Witness by J. R. Calloway" width="450" height="675" loading="lazy">
+          <span class="sample-badge">SAMPLE</span>
+          <figcaption><b>The Last Witness</b><span>J. R. Calloway — fictional sample</span></figcaption>
+        </figure>
+        <div class="spines" aria-hidden="true">
+          <div class="spine s1">PSYCHOLOGICAL THRILLERS</div>
+          <div class="spine s2">CRIME &amp; DETECTIVE</div>
+          <div class="spine s3">COZY MYSTERY</div>
+          <div class="spine s4">LEGAL THRILLERS</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aisle">
+      <div class="aisle-head"><h3>💛 Romance Aisle</h3><div class="line"></div></div>
+      <div class="shelf-one">
+        <figure class="book">
+          <img src="assets/cover-romance-web.jpg" alt="SAMPLE romance cover: When the Sea Remembers by Elena Marlowe" width="450" height="675" loading="lazy">
+          <span class="sample-badge">SAMPLE</span>
+          <figcaption><b>When the Sea Remembers</b><span>Elena Marlowe — fictional sample</span></figcaption>
+        </figure>
+        <div class="spines" aria-hidden="true">
+          <div class="spine s2">CONTEMPORARY ROMANCE</div>
+          <div class="spine s3">ROMANTASY</div>
+          <div class="spine s1">SMALL-TOWN LOVE</div>
+          <div class="spine s4">HISTORICAL ROMANCE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aisle">
+      <div class="aisle-head"><h3>🐉 Fantasy &amp; Sci-Fi Aisle</h3><div class="line"></div></div>
+      <div class="shelf-one">
+        <figure class="book">
+          <img src="assets/cover-fantasy-web.jpg" alt="SAMPLE fantasy cover: The Ember Crown by Kael Thornwood" width="450" height="675" loading="lazy">
+          <span class="sample-badge">SAMPLE</span>
+          <figcaption><b>The Ember Crown</b><span>Kael Thornwood — fictional sample</span></figcaption>
+        </figure>
+        <div class="spines" aria-hidden="true">
+          <div class="spine s3">EPIC FANTASY</div>
+          <div class="spine s1">URBAN FANTASY</div>
+          <div class="spine s4">SPACE OPERA</div>
+          <div class="spine s2">DYSTOPIAN WORLDS</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aisle">
+      <div class="aisle-head"><h3>📈 Business &amp; Nonfiction Aisle</h3><div class="line"></div></div>
+      <div class="shelf-one">
+        <figure class="book">
+          <img src="assets/cover-business-web.jpg" alt="SAMPLE business cover: Scale Without Burnout by Marcus Hale" width="450" height="675" loading="lazy">
+          <span class="sample-badge">SAMPLE</span>
+          <figcaption><b>Scale Without Burnout</b><span>Marcus Hale — fictional sample</span></figcaption>
+        </figure>
+        <div class="spines" aria-hidden="true">
+          <div class="spine s4">BUSINESS &amp; LEADERSHIP</div>
+          <div class="spine s1">MEMOIR</div>
+          <div class="spine s2">SELF-DEVELOPMENT</div>
+          <div class="spine s3">HOW-TO &amp; GUIDES</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="center small" style="color:#6a7261;margin-top:18px">All four covers above are SAMPLES with fictional titles and author names, created to demonstrate design standard and genre range.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>You fill a short brief</h3><p>Genre, title, author name, comparable books you admire, and the feeling your cover must give. Ten minutes, no design knowledge needed.</p></div>
+      <div class="step"><div class="n">2</div><h3>You get 2 concepts</h3><p>Two genuinely different directions for your cover — not two color swaps. Pick the one that makes your heart beat faster.</p></div>
+      <div class="step"><div class="n">3</div><h3>Revisions until approval</h3><p>We refine typography, imagery and layout in rounds until you approve the final cover — final files are produced only after that approval.*</p></div>
+      <div class="step"><div class="n">4</div><h3>Print-ready files</h3><p>KDP-ready files: ebook JPG, full paperback wrap (front + spine + back) as print-ready PDF, plus your promo pieces on the higher plans.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare">
+  <div class="wrap">
+    <h2>What the Specialists Charge</h2>
+    <p class="sub">CoverForge is priced against the verified market — not against hobbyist gig listings. These are the specialist's own published starting prices.</p>
+
+    <div class="chart">
+      <h3>Starting price — single cover</h3>
+      <div class="bar-row">
+        <div class="lbl"><span>MiblArt (cover-only studio, since 2015)</span><span>from $220</span></div>
+        <div class="bar"><i class="fill-rival" style="width:49%"></i></div>
+      </div>
+      <div class="bar-row">
+        <div class="lbl"><span><b>CoverForge Studio</b></span><span><b>from $149</b></span></div>
+        <div class="bar"><i class="fill-us" style="width:33%"></i></div>
+      </div>
+      <h3 style="margin-top:26px">Premium package</h3>
+      <div class="bar-row">
+        <div class="lbl"><span>MiblArt premium package</span><span>$700</span></div>
+        <div class="bar"><i class="fill-rival" style="width:100%"></i></div>
+      </div>
+      <div class="bar-row">
+        <div class="lbl"><span><b>CoverForge Premium (illustrated direction + promo kit)</b></span><span><b>$449</b></span></div>
+        <div class="bar"><i class="fill-us" style="width:64%"></i></div>
+      </div>
+      <p class="note">Competitor figures: MiblArt's published pricing (photo-manipulation covers from $220, illustrated from ~$390, premium package $700; rated 4.8★ across ~370 Trustpilot reviews). Cited as competitor data — that rating belongs to them, not to us.</p>
+    </div>
+
+    <div class="chart">
+      <h3>Ebook + print package — 2026 market roundups</h3>
+      <div class="bar-row">
+        <div class="lbl"><span>Typical ebook + print, with promo pieces (2026 roundups)</span><span>$200–$300</span></div>
+        <div class="bar"><i class="fill-typ" style="width:83%"></i></div>
+      </div>
+      <div class="bar-row">
+        <div class="lbl"><span><b>CoverForge Ebook + Print — spine, back cover + 3 promo pieces included</b></span><span><b>$249</b></span></div>
+        <div class="bar"><i class="fill-us" style="width:69%"></i></div>
+      </div>
+      <p class="note">Same shelf, same standard — with the print wrap and promo pieces already inside the price instead of sold as add-ons.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="prices">
+  <div class="wrap">
+    <h2>Pick Your Shelf</h2>
+    <p class="sub">One flat price per package. No hourly billing, no surprise add-ons — and final files are made only after you approve the design.*</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Ebook Cover</h3>
+        <div class="price">$149</div>
+        <div class="per">one-time · KDP ebook ready</div>
+        <ul>
+          <li>2 cover concepts to choose from</li>
+          <li>Genre-matched design (romance, fantasy, thriller, nonfiction &amp; more)</li>
+          <li>Professional typography &amp; layout</li>
+          <li>Revision rounds until you approve</li>
+          <li>Final ebook file, KDP-ready (2560 × 1600 JPG)</li>
+          <li>Thumbnail-checked at Amazon search size</li>
+        </ul>
+        <a class="btn" href="PAYHIP_CHECKOUT_URL">Start With Ebook — $149</a>
+      </div>
+      <div class="plan star">
+        <span class="flag">★ MOST AUTHORS CHOOSE THIS</span>
+        <h3>Ebook + Print Cover</h3>
+        <div class="price">$249</div>
+        <div class="per">one-time · the complete book package</div>
+        <ul>
+          <li>Everything in Ebook Cover</li>
+          <li>Full paperback wrap: front + <b>spine + back cover</b></li>
+          <li>Print-ready PDF built to your exact trim size &amp; page count</li>
+          <li>Back-cover layout with blurb, author photo area &amp; barcode space</li>
+          <li><b>3 promo pieces</b>: launch graphic, square post &amp; story graphic</li>
+          <li>Revision rounds until you approve</li>
+        </ul>
+        <a class="btn" href="PAYHIP_CHECKOUT_URL">Get the Full Package — $249</a>
+      </div>
+      <div class="plan">
+        <h3>Premium + Promo Kit</h3>
+        <div class="price">$449</div>
+        <div class="per">one-time · for launches &amp; series</div>
+        <ul>
+          <li>Everything in Ebook + Print</li>
+          <li><b>Illustrated art direction</b> — a cover look made only for your book</li>
+          <li>Full promo kit: launch graphics, ads, square &amp; story pieces, 3D book mockup</li>
+          <li>Series-ready style guide (fonts &amp; palette for your next books)</li>
+          <li>Priority production slot</li>
+          <li>Revision rounds until you approve</li>
+        </ul>
+        <a class="btn" href="PAYHIP_CHECKOUT_URL">Go Premium — $449</a>
+      </div>
+    </div>
+    <p class="center small" style="color:#6a7261;margin-top:20px">*How approval works: you review concepts and revision rounds before final files are produced; if no concept is approved, you don't proceed to final delivery. See the FAQ and your checkout terms for the full process.</p>
+  </div>
+</section>
+
+<!-- AI TRANSPARENCY -->
+<section class="transparency">
+  <div class="wrap">
+    <div class="box">
+      <h2>🤝 Straight Talk: How Our Covers Are Made</h2>
+      <p>Many CoverForge covers combine <b>AI-assisted artwork with professional manual finishing</b> — typography, composition, color grading and print preparation are done by hand, by a designer, for your genre. We tell you this up front because Amazon KDP requires authors to disclose AI-generated content when publishing, and we flag clearly — before delivery — whether your cover includes AI-generated elements so you can declare it correctly in KDP.</p>
+      <p style="margin-top:12px">Prefer zero generative AI? Choose the <b>“stock + design” option</b> in your brief: your cover is built from licensed stock photography and hand design only. Same price, same revision process — your call.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>Questions Authors Ask</h2>
+    <details>
+      <summary>What do you need from me to start?</summary>
+      <p>A short brief: your title, author name (or pen name), genre, a one-paragraph summary, 2–3 comparable covers you like, and — for print — your trim size and page count once your manuscript is formatted. If the page count isn't final yet, we design the front first and finish the spine when it is.</p>
+    </details>
+    <details>
+      <summary>How many revisions do I get?</summary>
+      <p>Revision rounds continue until you approve a final cover. We work in clear rounds — you comment, we adjust typography, imagery or layout — and final print-ready files are only produced after your approval.</p>
+    </details>
+    <details>
+      <summary>What files do I receive?</summary>
+      <p>Ebook plan: KDP-ready JPG (2560 × 1600). Ebook + Print: the ebook file plus a print-ready PDF of the full wrap (front, spine, back) at your trim size, and 3 promo graphics. Premium: everything plus the full promo kit, a 3D mockup and a series style guide.</p>
+    </details>
+    <details>
+      <summary>Do I own the cover?</summary>
+      <p>Yes — on final delivery you receive the finished cover files for use on your book and its promotion. Source/artwork components may include licensed stock or AI-assisted elements as disclosed in your delivery note; tell us in the brief if you need the no-generative-AI “stock + design” route.</p>
+    </details>
+    <details>
+      <summary>What about Amazon KDP's AI disclosure?</summary>
+      <p>KDP asks authors to disclose AI-generated content, including cover art, when publishing. Your delivery note states plainly whether AI-generated elements were used, so you can answer KDP's question accurately in under a minute. If you chose the “stock + design” option, your note will say so.</p>
+    </details>
+    <details>
+      <summary>Can you match my existing series look?</summary>
+      <p>Yes — send your previous covers in the brief and we'll design to your series' fonts, palette and layout language. The Premium plan includes a written style guide so future books stay consistent.</p>
+    </details>
+    <details>
+      <summary>How long does it take?</summary>
+      <p>Concepts typically arrive within a few business days of a complete brief; the full timeline depends on revision rounds and, for print, on your final page count. Premium orders take a priority slot.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Your next reader is scrolling right now.</h2>
+    <p>3.5 million new self-published titles a year are fighting for the same two seconds of attention. The ones with professional covers win a wildly unfair share of them.</p>
+    <a class="btn" href="PAYHIP_CHECKOUT_URL">Forge My Cover — From $149</a>
+    <p class="small" style="margin-top:14px">2 concepts · revisions until approval · ebook, print &amp; promo in one package</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 CoverForge Studio — book cover design for independent authors.</span>
+    <span><a href="https://pippen32.github.io/coverforge-studio/">pippen32.github.io/coverforge-studio</a></span>
+    <span>Sample covers shown with fictional titles &amp; authors. Competitor prices cited from MiblArt's published pricing, Nov 2026; market data: Bowker via Publishers Weekly, March 2026.</span>
+  </div>
+</footer>
+
+</body>
+</html>
